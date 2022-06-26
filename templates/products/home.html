@@ -1,0 +1,218 @@
+{% extends 'base.html' %}
+{% block title %} | Главная {% endblock %}
+{% block content %}
+
+{% load humanize %}
+{% load static %}
+
+<div class="content-area-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-6">
+                    <div id="carDetailsSlider" class="carousel car-details-sliders slide">
+                            <div class="active item carousel-item" data-slide-number="0">
+                                <img src="{% static 'img/toolsimg.png' %}" class="img-fluid" alt="slider-car" style="width: 350px;">
+                            </div>
+                          
+                    </div>
+            </div>
+            <div class="col-xl-7 col-lg-6 align-self-center">
+                <div class="main-title">
+                    <h1 style="color: #ffe600;">Строительные материалы</h1>
+                    <h4 style="border-bottom: 5px solid #ffe600; padding-bottom: 25px;"><b>Оптовая и розничная продажа г. Нур-Султан (Астана)</b></h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolor impedit minus, esse aliquid voluptas praesentium ad rerum consectetur earum estadipisci? Ex, in. DoloT
+                        enetur dolor impedit minus, esse aliquid voluptas praesentium ad rerum consectetur earum est reicien
+                        dis adipisci? Ex, in. Doloribus cum in laudanti Ex, in. Doloribus cum inum fugiat!.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="container">
+        <div class="cards">
+                <div id="mymain">
+                  <div>Приемлемая цена<img src="{% static 'img/icons/best-price.png' %}"></div>
+                  <div>Быстрая Доставка<img src="{% static 'img/icons/delivery.png' %}"></div>
+                  <div>Широкий выбор<img src="{% static 'img/icons/tools.png' %}"></div>
+                </div>
+        </div>
+    </div>
+
+    <!-- Featured car start -->
+<div class="featured-car content-area-5">
+    <div class="container">
+        <div class="main-title">
+            <h1>Популярные товары</h1>
+        </div>
+        <div class="slick-slider-area clearfix">
+            <div class="row slick-carousel" data-slick='{"slidesToShow": 3, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+              {% for car in featured_cars %}
+                <div class="slick-slide-item">
+                    <div class="car-box-3">
+                        <div class="car-thumbnail">
+                            <a href="{% url 'car_detail' car.id %}" class="car-img">
+                                <div class="tag-2">Featured</div>
+                                <div class="price-box">
+                                    <span>${{car.price | intcomma}}</span>
+                                </div>
+                                <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car" style="min-height: 262px; max-height: 262px;">
+                            </a>
+                            <div class="carbox-overlap-wrapper">
+                                <div class="overlap-box">
+                                    <div class="overlap-btns-area">
+                                        <div class="car-magnify-gallery">
+                                            <a href="{{car.car_photo.url}}" class="overlap-btn">
+                                                <i class="fa fa-expand"></i>
+                                                <img class="hidden" src="{{car.car_photo.url}}">
+                                            </a>
+                                            {% if car.car_photo_1 %}
+                                            <a href="{{car.car_photo_1.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_1.url}}">
+                                            </a>
+                                            {% endif %}
+                                            {% if car.car_photo_2 %}
+                                            <a href="{{car.car_photo_2.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_2.url}}">
+                                            </a>
+                                            {% endif %}
+                                            {% if car.car_photo_3 %}
+                                            <a href="{{car.car_photo_3.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_3.url}}">
+                                            </a>
+                                            {% endif %}
+                                            {% if car.car_photo_4 %}
+                                            <a href="{{car.car_photo_4.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_4.url}}">
+                                            </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <h1 class="title">
+                                <a href="{% url 'car_detail' car.id %}">{{ car.car_title }}</a>
+                            </h1>
+                            <div class="location">
+                                <a href="{% url 'car_detail' car.id %}">
+                                    <i class="flaticon-pin"></i>{{car.state}}, {{car.city}}
+                                </a>
+                            </div>
+                            <ul class="facilities-list clearfix">
+                                <li>{{car.fuel_type}}</li>
+                                <li>{{car.miles | intcomma}} km</li>
+                                <li>{{car.transmission}}</li>
+                                <li>{{car.body_style}}</li>
+                                <li>{{car.color}}</li>
+                                <li>{{car.year}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            </div>
+            <div class="slick-btn">
+                <div class="slick-prev slick-arrow-buton sab-4">
+                    <i class="fa fa-angle-left"></i>
+                </div>
+                <div class="slick-next slick-arrow-buton sab-3">
+                    <i class="fa fa-angle-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featured car end -->
+ -->
+
+
+
+<!-- <div class="featured-car content-area-5"></div>
+<div class="container">
+    <div class="row">
+            <div class="tools">
+                <img src="{% static 'img/toolsimg.png' %}" alt="img">
+            </div>
+            <div class="list-inline">
+                <div class="main-title">
+                    <h1><span style="color: #ffe600;">Строительные материалы</span></h1>
+                    <h5 style="border-bottom: 5px solid #ffe600; padding-bottom: 5px;"><b>Оптовая и розничная продажа г. Нур-Султан (Астана)</b></h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolor impedit minus, 
+                        esse aliquid voluptas praesentium ad rerum consectetur earum est reiciendis adipisci? Ex, in. DoloT
+                        enetur dolor impedit minus, esse aliquid voluptas praesentium ad rerum consectetur earum est reicien
+                        dis adipisci? Ex, in. Doloribus cum in laudantium fugiat!.</p>
+                </div>
+            </div>
+        
+    </div>
+</div>
+</div>
+
+<!-- <div class="featured-car content-area-5">
+    <div class="container">
+        <div class="main-title">
+            <h1>Popular <span>Items</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="slick-slider-area clearfix">
+            <div class="row slick-carousel" data-slick='{"slidesToShow": 3, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+              {% for item in popular_items %}
+                <div class="slick-slide-item">
+                    <div class="car-box-3">
+                        <div class="car-thumbnail">
+                            <a href="" class="car-img">
+                                <div class="tag-2">Popular</div>
+                                <div class="price-box">
+                                    {% if item.is_contract_price == True %}
+                                    <span>Договорная цена</span>
+                                    {% endif %}
+                                    <span>{{item.price }}тг</span>
+                                </div>
+                                <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car" style="min-height: 262px; max-height: 262px;">
+                            </a>
+                            <div class="carbox-overlap-wrapper">
+                                <div class="overlap-box">
+                                    <div class="overlap-btns-area">
+                                        <div class="car-magnify-gallery">
+                                            <a href="{{item.item_photo.url}}" class="overlap-btn">
+                                                <i class="fa fa-expand"></i>
+                                                <img class="hidden" src="{{item.item_photo.url}}">
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <h1 class="title">
+                                <a href="">{{ item.item_title }}</a>
+                            </h1>
+                            <div class="location">
+                                <a href="">
+                                    <i class="flaticon-pin"></i>{{item.amount}}, {{item.is_in_stock}}
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            </div>
+            <div class="slick-btn">
+                <div class="slick-prev slick-arrow-buton sab-4">
+                    <i class="fa fa-angle-left"></i>
+                </div>
+                <div class="slick-next slick-arrow-buton sab-3">
+                    <i class="fa fa-angle-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+{% endblock %}

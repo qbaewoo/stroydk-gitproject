@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %} | Доставка и оплата{% endblock %}
+{% block content %}
+
+{% load static %}
+
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'home' %}">Главная</a></li>
+                <li class="active">Доставка и оплата</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+        <div class="container" style="padding-bottom: 50px;">
+            <div class="row">
+                <div class="col-xl-7 col-lg-6">
+                    <div class="main-title">
+                        <h1 style="color: #ffe600; border-bottom: 3px solid #ffe600; width: fit-content;">Доставка и Оплата</h1>
+                        <p><h5>Способы доставки</h5>
+                       <b>Самовывоз.</b> В рабочие время с 09.00 до 19.00 | Перед приездом, пожалуйста, предупредите по телефону.
+                       <br><b>Доставка</b> по городу Астана 3 000 тг. Пригород 5 000 тг.
+                       <br><b>Водитель-экспедитор (курьер)</b> не разгружает товар Клиента-покупателя, он контролирует сохранность материальных средств Продавца и других Клиентов-покупателей и руководит разгрузкой автомашины.
+                        <h5>Способы оплаты:</h5>
+                        <ul class="b">
+                            <li>Наличный</li>
+                            <li>Без наличный</li>
+                          </ul>
+                        <h5>Регионы доставки:</h5>
+                        Нур-Султан(Астана)
+                        </p>
+
+                    </div>
+                </div>
+            <div class="col-xl-5 col-lg-6">
+                    <div id="carDetailsSlider" class="carousel car-details-sliders slide">
+                            <div class="active item carousel-item" data-slide-number="0">
+                                <img src="{% static 'img/delivery.jpg' %}" class="img-fluid" alt="slider-car" style="width: 400px; top: 60px;">
+                            </div>
+                          
+                    </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

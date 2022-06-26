@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} | О нас {% endblock %}
+{% block content %}
+
+{% load static %}
+
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'home' %}">Главная</a></li>
+                <li class="active">О нас</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+        <div class="container" style="padding-bottom: 50px;">
+            <div class="row">
+                <div class="col-xl-7 col-lg-6">
+                    <div class="main-title">
+                        <h1 style="color: #ffe600; border-bottom: 3px solid #ffe600; width: fit-content;">О компании</h1>
+                       <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolor impedit minus, esse aliquid voluptas praesentium ad rerum consectetur earum estadipisci? Ex, in. DoloT
+                            enetur dolor impedit minus, esse aliquid voluptas praesentium ad rerum consectetur earum est reicien
+                            dis adipisci? Ex, in. Doloribus cum in laudanti Ex, in. Doloribus cum inum fugiat!
+                        </p>
+                        <p><b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolor impedit minus, esse aliquid voluptas :</b>
+                        </p>
+                        <ul class="b">
+                            <li>Coffee</li>
+                            <li>Tea</li>
+                            <li>Coca Cola</li>
+                          </ul>
+
+                    </div>
+                </div>
+            <div class="col-xl-5 col-lg-6">
+                    <div id="carDetailsSlider" class="carousel car-details-sliders slide">
+                            <div class="active item carousel-item" data-slide-number="0">
+                                <img src="{% static 'img/office/office_1.jpg' %}" class="img-fluid" alt="slider-car" style="width: 400px;">
+                            </div>
+                          
+                    </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

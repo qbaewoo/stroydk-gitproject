@@ -1,0 +1,26 @@
+{% load static %}
+<header class="top-header th-2 top-header-bg">
+        <div class="row">
+            <div class="item">
+                <a href="{% url 'home' %}" class="company-logo">
+                    <img src="{% static '../img/logos/logo.png' %}" alt="logo">
+                </a>
+            </div>
+
+            <div class="item">
+                <!-- Search -->
+                <div class="form-outline">
+                    <input type="search" id="form1" class="form-control" placeholder="Поиск" aria-label="Search" />
+                </div>
+            </div>
+
+            <div class="item">
+                <button class="btn">
+                    <i class="fa fa-bars"></i>  Каталог продукции
+                </button>
+            </div>
+
+        
+
+    </div>
+</header>

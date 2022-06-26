@@ -1,0 +1,35 @@
+{% load static %}
+<header class="main-header sticky-header">
+    <div class="container">
+        <div class="row">
+            <div class="list-inline">
+                            <a
+                            {% if 'about' in request.path %}
+                            class="a active"
+                            {% else %}
+                            {% endif %}
+                             href="{% url 'about' %}">
+                                О нас
+                            </a>
+                            <a
+                            {% if 'delivery' in request.path %}
+                            class="a active"
+                            {% else %}
+                            {% endif %}
+                             href="{% url 'delivery' %}">
+                                Доставка и оплата
+                            </a>
+            </div>
+                <div class="list-inline">
+                    <a href="tel:+7(702)-683-46-16"><i class="fa fa-phone"></i> +7(702)-683-46-16</a>
+                    <a href="tel:+7(702)-683-46-16"><i class="fa fa-phone"></i> +7(707)-208-90-16</a>
+                </div>
+                <div class="socialmedia">
+                    <a href="#"><i class="fa fa-telegram"></i></a>
+                    <a href="#"><i class="fa fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa fa-envelope"></i></a> <!--нужно найти иконку -->
+                </div>
+            
+        </div>
+    </div>
+</header>
